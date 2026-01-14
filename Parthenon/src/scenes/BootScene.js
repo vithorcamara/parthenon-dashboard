@@ -1,4 +1,6 @@
-// Project/src/scenes/BootScene.js
+// Parthenon/src/scenes/BootScene.js
+import BootAnimationScene from './BootAnimationScene.js';
+
 export default function BootScene({ input, sceneManager }) {
     this.input = input;
     this.sceneManager = sceneManager;
@@ -20,17 +22,16 @@ export default function BootScene({ input, sceneManager }) {
     }.bind(this);
 
     this.update = function() {
-        // Exemplo de transição de cena ao pressionar START
+        // Ao pressionar START, carrega a BootAnimationScene
         if (this.input.isButtonPressed('start')) {
-            console.log("[BootScene] Botao START pressionado! (Transicao de cena nao implementada)");
-            // Futuramente, poderia carregar a próxima cena:
-            // this.sceneManager.loadScene(HomeScene);
+            console.log("[BootScene] Botao START pressionado! Carregando BootAnimationScene...");
+            this.sceneManager.loadScene(BootAnimationScene);
         }
     }.bind(this);
 
     this.render = function() {
         if (gameFont) {
-            gameFont.print(10, 10, "AthenaEnv Frontend");
+            gameFont.print(10, 10, "Parthenon Dashboard");
             gameFont.print(10, 30, "Pressione START");
         } else {
             // Fallback se a fonte não carregar.
