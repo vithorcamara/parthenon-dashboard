@@ -9,3 +9,4 @@ Este diretório é o repositório central para todos os **assets gráficos** uti
 - **logos/**: Guarda logos de sistemas, jogos ou do próprio frontend.
 
 Manter essa estrutura organizada é fundamental para a fácil localização e gerenciamento dos recursos visuais do projeto.
+

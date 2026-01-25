@@ -44,24 +44,24 @@ O arquivo `main.js` deve conter apenas:
 *   Início do loop principal.
 *   Nenhuma lógica de UI ou de aplicação deve residir aqui.
 
-### 3.3 Telas como Scenes
+### 3.3 Telas como Screens
 
-Cada tela ou estado principal da aplicação é uma **Scene** independente:
+Cada tela ou estado principal da aplicação é uma **Screen** independente:
 
 *   Tela de Login
 *   Menu Principal (Dashboard)
 *   Lista de Jogos
 *   Tela de Configurações
 
-Scenes são gerenciadas por um `SceneManager` e não compartilham lógica interna diretamente.
+Screens são gerenciadas por um `ScreenManager` e não compartilham lógica interna diretamente.
 
 ### 3.4 Gerenciamento de Memória de Assets
 
 A gestão de memória no PS2 é crítica. A arquitetura adota uma estratégia clara para o carregamento e descarregamento de assets:
 
-*   **Assets Globais**: Fontes, ícones e sons de UI comuns são carregados uma única vez pela `BootScene` (ou uma cena de carregamento inicial) e mantidos na memória.
-*   **Assets de Cena**: Cada `Scene` é responsável por carregar seus próprios assets específicos (ex: imagens de fundo, logos de jogos) em seu método `enter()`.
-*   **Limpeza Obrigatória**: Cada `Scene` **deve** descarregar os assets que carregou em seu método `exit()` para liberar memória antes da transição para a próxima cena.
+*   **Assets Globais**: Fontes, ícones e sons de UI comuns são carregados uma única vez pela `BootScreen` (ou uma tela de carregamento inicial) e mantidos na memória.
+*   **Assets de Tela**: Cada `Screen` é responsável por carregar seus próprios assets específicos (ex: imagens de fundo, logos de jogos) em seu método `enter()`.
+*   **Limpeza Obrigatória**: Cada `Screen` **deve** descarregar os assets que carregou em seu método `exit()` para liberar memória antes da transição para a próxima tela.
 
 Essa abordagem garante que apenas os recursos necessários estejam na memória, evitando sobrecarga.
 
@@ -127,29 +127,29 @@ Infraestrutura base da aplicação, totalmente agnóstica à lógica de negócio
 src/core/
 ├── App.js           # Orquestrador principal da aplicação
 ├── GameLoop.js      # Gerencia o loop de update/render
-├── SceneManager.js  # Gerencia a transição entre as cenas
+├── ScreenManager.js  # Gerencia a transição entre as telas
 ├── Input.js         # Abstrai a leitura do controle do PS2
 ├── Renderer.js      # Funções de baixo nível para desenhar na tela
 └── Audio.js         # Gerencia a reprodução de som e música
 ```
 
-### 6.3 `src/scenes/`
+### 6.3 `src/screens/`
 
-Cada Scene representa uma **tela ou estado completo** da aplicação.
+Cada screen representa uma **tela ou estado completo** da aplicação.
 
 ```
-src/scenes/
-├── BootScene.js     # Carrega assets iniciais
-├── LoginScene.js    # Tela de autenticação
-├── HomeScene.js     # Dashboard principal
-├── GameListScene.js # Tela de listagem de jogos
-└── SettingsScene.js # Tela de configurações
+src/screens/
+├── Bootscreen.js     # Carrega assets iniciais
+├── Loginscreen.js    # Tela de autenticação
+├── Homescreen.js     # Dashboard principal
+├── GameListscreen.js # Tela de listagem de jogos
+└── Settingsscreen.js # Tela de configurações
 ```
 
-Cada `Scene` implementa uma interface comum para consistência, documentada abaixo. Isso ajuda novos contribuidores e facilita o debug.
+Cada `screen` implementa uma interface comum para consistência, documentada abaixo. Isso ajuda novos contribuidores e facilita o debug.
 
 ```js
-class Scene {
+class screen {
   /**
    * Chamado quando a cena se torna ativa.
    * @param {object} params - Parâmetros passados da cena anterior.
@@ -196,7 +196,7 @@ src/app/
 
 Componentes de interface reutilizáveis e de baixo nível.
 
-> **Nota de atenção**: Dado o hardware restrito do PS2, é crucial evitar composição profunda de componentes ou abstrações de UI muito genéricas que não serão reutilizadas. Se um componente for complexo e usado apenas em uma `Scene`, considere movê-lo para `src/app/components/` ou declará-lo na própria `Scene` para manter a arquitetura mais "flat" e performática.
+> **Nota de atenção**: Dado o hardware restrito do PS2, é crucial evitar composição profunda de componentes ou abstrações de UI muito genéricas que não serão reutilizadas. Se um componente for complexo e usado apenas em uma `screen`, considere movê-lo para `src/app/components/` ou declará-lo na própria `screen` para manter a arquitetura mais "flat" e performática.
 
 ```
 src/ui/
@@ -225,11 +225,11 @@ src/utils/
 O fluxo principal para iniciar um jogo seria:
 
 ```
-main.js → core.App → core.SceneManager → scenes.GameListScene
+main.js → core.App → core.screenManager → screens.GameListscreen
       ↓
 (usuário seleciona jogo)
       ↓
-GameListScene → app.services.OplService.launchGame(gameId)
+GameListscreen → app.services.OplService.launchGame(gameId)
       ↓
 (OplService executa o ELF do OPL com os parâmetros corretos)
       ↓
@@ -256,7 +256,7 @@ GameListScene → app.services.OplService.launchGame(gameId)
 
 Esta arquitetura permite:
 
-*   Adicionar novas telas (Scenes) sem impactar as existentes.
+*   Adicionar novas telas (screens) sem impactar as existentes.
 *   Modificar a aparência (Themes) sem reescrever a lógica.
 *   Trocar ou atualizar o serviço de API alterando apenas o `ApiClient`.
 *   Adicionar novas fontes de jogos (além do OPL) criando um novo serviço similar ao `OplService`.

@@ -11,3 +11,4 @@ Exemplos:
 - Ícones de navegação (setas)
 
 Manter os ícones centralizados aqui facilita a reutilização e a aplicação de temas visuais.
+

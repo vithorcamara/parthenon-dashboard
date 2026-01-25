@@ -201,16 +201,16 @@ Estados importantes:
 
 ---
 
-## 10. Consistência entre Scenes
+## 10. Consistência entre Screens
 
-Independentemente da Scene:
+Independentemente da Screen:
 
 - Navegação segue o mesmo padrão
 - Botões semânticos mantêm significado
 - Estilo visual permanece consistente
 - Transições seguem as mesmas regras
 
-Scenes **não devem** reinventar comportamento de UI.
+Screens **não devem** reinventar comportamento de UI.
 
 ---
 
@@ -262,3 +262,4 @@ Próximos passos:
 * Definir **tamanhos reais de tiles (px)**
 * Criar um **checklist de conformidade Metro-like**
 Esse projeto já está com **documentação de gente grande** 👌
+

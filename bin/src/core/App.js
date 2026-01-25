@@ -1,7 +1,7 @@
 // Project/src/core/App.js
-import SceneManager from './SceneManager.js';
+import ScreenManager from './ScreenManager.js';
 import Input from './Input.js';
-import BootScene from '../scenes/BootScene.js';
+import LogoRevealScreen from '../screens/BootStartScreen.js';
 
 export function run() {
     // --- Initialization ---
@@ -12,21 +12,22 @@ export function run() {
 
     // --- Game Objects and State ---
     const input = new Input();
-    const sceneManager = new SceneManager(input);
+    const screenManager = new ScreenManager(input);
 
     // Carrega a cena inicial
-    sceneManager.loadScene(BootScene);
+    screenManager.loadScreen(LogoRevealScreen);
 
     console.log("[App.run] Iniciando loop principal (Screen.display)...");
     // --- Main Game Loop ---
     Screen.display(() => {
         // --- Update ---
         input.update(); // Atualiza o estado do controle
-        sceneManager.update(); // Atualiza a cena ativa (sem dt)
+        screenManager.update(); // Atualiza a cena ativa (sem dt)
 
         // --- Render ---
-        sceneManager.render(); // Renderiza a cena ativa
+        screenManager.render(); // Renderiza a cena ativa
     });
     Screen.flip();
     Screen.clear();
 }
+

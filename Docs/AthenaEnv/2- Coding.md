@@ -21,3 +21,4 @@ Qt recommendation: Enable console output
 * Android: [QuickEdit](https://play.google.com/store/apps/details?id=com.rhmsoft.edit&hl=pt_BR&gl=US) and a PS2 with wLE for test.
 
 Oh, and I also have to mention that an essential prerequisite for using AthenaEnv is knowing how to code in JavaScript.
+

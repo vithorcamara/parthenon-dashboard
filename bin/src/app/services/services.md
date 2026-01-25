@@ -8,3 +8,4 @@ Exemplos de serviços:
 - **OplService.js**: Único responsável por saber como se comunicar com o Open PS2 Loader (OPL). Ele expõe métodos simples como `launchGame(gameId)`, escondendo toda a complexidade da comunicação subjacente.
 - **ApiClient.js**: Gerencia toda a comunicação com uma API externa (se houver), como buscar perfis de usuário, listas de jogos online ou placares.
 - **UserService.js**: Mantém o estado do usuário logado, suas preferências e dados de perfil.
+

@@ -302,7 +302,7 @@ Properties:
 
 
 **Lights**  
-You have 4 lights to use in 3D scenes, use set to configure them.
+You have 4 lights to use in 3D screens, use set to configure them.
 
 * Lights.set(id, attribute, x, y, z)  
   • Avaiable light attributes: Lights.DIRECTION, Lights.AMBIENT, Lights.DIFFUSE    
@@ -602,3 +602,4 @@ Methods:
 
 * send(data) - Send data with Buffer
 * recv() - Receive data to a buffer
+

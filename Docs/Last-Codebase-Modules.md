@@ -31,21 +31,22 @@ The goal is to allow for manual verification of syntax and logic against the off
 
 ---
 
-## 3. `src/core/SceneManager.js`
+## 3. `src/core/ScreenManager.js`
 
--   **Responsibility**: To manage the lifecycle of the scenes (screens). It is responsible for loading new scenes, unloading old ones, and calling the `update()` and `render()` functions of the active scene every frame.
--   **Structure**: A function constructor that holds a reference to the current scene and exposes the `loadScene(Scene)` method.
+-   **Responsibility**: To manage the lifecycle of the screens (screens). It is responsible for loading new screens, unloading old ones, and calling the `update()` and `render()` functions of the active screen every frame.
+-   **Structure**: A function constructor that holds a reference to the current screen and exposes the `loadScreen(Screen)` method.
 
 ### AthenaEnv API Calls:
--   **None**. This module is an orchestrator and does not interact directly with the AthenaEnv API. It delegates this responsibility to the scenes.
+-   **None**. This module is an orchestrator and does not interact directly with the AthenaEnv API. It delegates this responsibility to the screens.
 
 ---
 
-## 4. `src/scenes/BootScene.js`
+## 4. `src/screens/BootScreen.js`
 
--   **Responsibility**: To serve as the first screen of the application and as an example of a functional scene. It loads its own resources (like fonts) and uses them to draw on the screen.
--   **Structure**: A function constructor that implements the "interface" of a scene: `enter()`, `update()`, `render()`, `exit()`.
+-   **Responsibility**: To serve as the first screen of the application and as an example of a functional screen. It loads its own resources (like fonts) and uses them to draw on the screen.
+-   **Structure**: A function constructor that implements the "interface" of a screen: `enter()`, `update()`, `render()`, `exit()`.
 
 ### AthenaEnv API Calls:
 -   `new Font("./path/to/font.ttf")`: Loads a font file from the file system into a `Font` object.
 -   `font.print(x, y, "text")`: Uses a previously loaded `Font` object to draw text on the screen at the specified coordinates.
+

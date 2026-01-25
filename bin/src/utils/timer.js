@@ -26,3 +26,4 @@ export class Timer {
     this.paused = false;
   }
 }
+

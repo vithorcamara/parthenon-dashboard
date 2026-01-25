@@ -9,3 +9,4 @@ Isso pode incluir:
 - Imagens de marca para aplicações.
 
 Centralizar os logos aqui facilita o acesso e a manutenção da identidade visual do projeto.
+

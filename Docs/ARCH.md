@@ -1,6 +1,6 @@
 # 🏛️ Parthenon Dashboard
 
-## Arquitetura de Boot Scene — Lições do OSD-XMB
+## Arquitetura de Boot screen — Lições do OSD-XMB
 
 Este documento descreve **como funciona a cena de boot do OSD-XMB / XMB do PS2** e **como aplicar esses princípios corretamente no Parthenon Dashboard**, evitando problemas como *flicker*, animações travadas e lógica excessivamente complexa.
 
@@ -8,7 +8,7 @@ Este documento descreve **como funciona a cena de boot do OSD-XMB / XMB do PS2**
 
 ## 🎯 Contexto
 
-Durante o desenvolvimento do **Parthenon Dashboard**, foi tentada a implementação de uma *boot scene* inspirada no Xbox, utilizando **vídeo convertido em frames**.
+Durante o desenvolvimento do **Parthenon Dashboard**, foi tentada a implementação de uma *boot screen* inspirada no Xbox, utilizando **vídeo convertido em frames**.
 Essa abordagem causou:
 
 * Piscadas de tela (*flicker*)
@@ -34,7 +34,7 @@ Tudo o que parece “cinematográfico” é, na verdade, **coreografia procedura
 O boot inteiro é **uma única cena**, com estados internos:
 
 ```
-BootScene
+Bootscreen
  ├─ Estado 0: Fade-in + fundo animado
  ├─ Estado 1: Logo (PS2 / XMB)
  ├─ Estado 2: Aviso de epilepsia
@@ -138,7 +138,7 @@ Nada complexo:
 
 ```js
 if (time > 10) {
-  SceneManager.changeScene(MainMenu);
+  screenManager.changescreen(MainMenu);
 }
 ```
 
@@ -162,7 +162,7 @@ Esses pontos explicam **por que o XMB é fluído no PS2**.
 ### Estrutura mínima recomendada
 
 ```
-Scene
+screen
  ├─ onEnter()   → carrega assets UMA vez
  ├─ update(dt)  → apenas lógica
  ├─ render()    → apenas desenho
@@ -195,7 +195,7 @@ O Parthenon não precisa ser XMB-like visualmente, mas **deve seguir o mesmo pri
 ### Boot Metro sugerido
 
 ```
-BootScene
+Bootscreen
  ├─ Tiles de fundo deslizando
  ├─ Glow central
  ├─ Logo Parthenon
@@ -261,5 +261,6 @@ A dificuldade enfrentada no boot não foi erro — foi o sinal de que o projeto 
 Quando quiser, este documento pode evoluir para:
 
 * `BOOT_ARCHITECTURE.md`
-* `SCENE_SYSTEM.md`
+* `screen_SYSTEM.md`
 * ou base do *engine core* do Parthenon.
+

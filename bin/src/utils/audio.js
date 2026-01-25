@@ -4,6 +4,7 @@
 
 const SoundPath = {
     BOOT: "./assets/audio/sfx/startup.wav",
+    START: "./assets/audio/sfx/snd_startup.wav",
     CURSOR: "./assets/audio/sfx/cursor.adp",
     CANCEL: "./assets/audio/sfx/cancel.adp"
 };
@@ -82,3 +83,4 @@ function AudioShutdown() {
 // -----------------------------
 
 console.log("INIT LIB: AUDIO SAFE COMPLETE");
+

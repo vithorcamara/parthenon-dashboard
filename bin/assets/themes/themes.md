@@ -11,3 +11,4 @@ Um arquivo de tema (`default.json`, por exemplo) pode definir:
 - Valores de espaçamento e layout.
 
 Essa abordagem desacopla o design da lógica, alinhando-se perfeitamente com os objetivos da arquitetura.
+

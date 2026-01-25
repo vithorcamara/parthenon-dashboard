@@ -10,3 +10,4 @@ Esses são sons curtos que fornecem feedback auditivo para as ações do usuári
 - Som de "voltar" ao cancelar uma ação.
 
 Manter esses sons organizados aqui é essencial para uma experiência de usuário coesa e responsiva.
+

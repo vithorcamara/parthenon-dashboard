@@ -58,7 +58,7 @@ A arquitetura do projeto é projetada para ser modular e de fácil manutenção.
     │   ├── app/         # Lógica de negócio e serviços
     │   ├── config/      # Configurações globais
     │   ├── core/        # Núcleo da aplicação (loop, cenas, input)
-    │   ├── scenes/      # Telas individuais da aplicação
+    │   ├── screens/      # Telas individuais da aplicação
     │   ├── ui/          # Componentes de UI reutilizáveis
     │   └── utils/       # Funções utilitárias
     ├── main.js          # Ponto de entrada da aplicação

@@ -11,3 +11,4 @@ Exemplos:
 - **DialogBox.js**: Renderiza uma caixa de diálogo para exibir mensagens ao usuário.
 
 > **Nota de Atenção**: Conforme o SAD, é importante não criar hierarquias de componentes muito profundas ou abstrações excessivas aqui, para manter a performance alta no hardware do PS2.
+
