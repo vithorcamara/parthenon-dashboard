@@ -6,7 +6,13 @@ console.log("[main] Iniciando Parthenon Dashboard...");
 // Importar e executar a função principal da aplicação
 import { run } from './src/core/App.js';
 
-std.loadScript('./src/utils/audio.js');
+const jsList = [
+    './src/utils/audio.js', // Sound Handler
+    './src/ui/colors.js', // Color Definitions
+    './src/ui/fonts.js', // Font Definitions
+];
+
+jsList.forEach((js) => { std.loadScript(js); });
 
 Screen.setParam(Screen.DEPTH_TEST_ENABLE, false);
 Screen.setFrameCounter(true);

@@ -1,5 +1,6 @@
 // Parthenon/src/screens/BootScreen.js
 import LogoRevealScreen from './BootStartScreen.js';
+const data_screen = Screen.getMode();
 
 export default class BootScreen {
     constructor({ input, screenManager }) {
@@ -14,10 +15,12 @@ export default class BootScreen {
         // Carrega a fonte para esta cena.
         try {
             console.log("[BootScreen] Carregando fonte...");
-            this.gameFont = new Font("./assets/fonts/Pixellari.ttf");
+            this.gameFont = Fonts.REGULAR;
+            this.gameFont.color = Colors.PRIMARY_COLOR;
             console.log("[BootScreen] Fonte carregada com sucesso.");
+            Object.entries(data_screen).forEach(([key, value]) => {console.log(key, value);});
         } catch (e) {
-            console.error("[BootScreen] Falha ao carregar a fonte 'Pixellari.ttf'. Erro:", e);
+            console.error("[BootScreen] Falha ao carregar a fonte 'SpaceGrotesk-Regular.ttf'. Erro:", e);
             this.gameFont = null;
         }
     }
@@ -34,6 +37,7 @@ export default class BootScreen {
         if (this.gameFont) {
             this.gameFont.print(10, 10, "Parthenon Dashboard");
             this.gameFont.print(10, 30, "Pressione START");
+
         } else {
             // Fallback se a fonte não carregar.
             // A API de print global pode ou não existir, mas é uma tentativa.
