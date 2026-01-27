@@ -1,4 +1,4 @@
-font_path = "./assets/fonts/SpaceGrotesk-";
+let font_path = "./assets/fonts/SpaceGrotesk-";
 
 const Fonts = {
   LIGHT: new Font(`${font_path}Light.ttf`),
@@ -7,3 +7,5 @@ const Fonts = {
   SEMIBOLD: new Font(`${font_path}SemiBold.ttf`),
   BOLD: new Font(`${font_path}Bold.ttf`),
 };
+
+export default Fonts;

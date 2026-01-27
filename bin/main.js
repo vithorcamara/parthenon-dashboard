@@ -8,8 +8,6 @@ import { run } from './src/core/App.js';
 
 const jsList = [
     './src/utils/audio.js', // Sound Handler
-    './src/ui/colors.js', // Color Definitions
-    './src/ui/fonts.js', // Font Definitions
 ];
 
 jsList.forEach((js) => { std.loadScript(js); });

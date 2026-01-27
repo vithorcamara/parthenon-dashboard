@@ -5,3 +5,4 @@ const Colors = {
   PRIMARY_TEXT: Color.new(223, 228, 231, 128),
   SECONDARY_TEXT: Color.new(120, 118, 119, 128),
 };
+export default Colors;
