@@ -1,16 +1,18 @@
 // Parthenon/src/screens/BootScreen.js
 import LogoRevealScreen from './BootStartScreen.js';
+import Colors from '../ui/Colors.js';
+import Fonts from '../ui/Fonts.js';
+import TextStyles from '../ui/Texts.js';
+import Texts from '../ui/Texts.js';
+
 const data_screen = Screen.getMode();
-import Colors from '../ui/colors.js';
-import Fonts from '../ui/fonts.js';
-import TextStyles from '../ui/text.js';
 
 export default class BootDashboardScreen {
     constructor({ input, screenManager }) {
         this.input = input;
         this.screenManager = screenManager;
         this.gameFont = null;
-        this.navItems = ["Inicio", "Jogos & Apps", "Midia", "Configurações"];
+        this.navItems = LANG.DASHBOARD.NAVMENU;
         this.activeNavIndex = 0; // item inicialmente selecionado
         console.log("[BootScreen] Construtor.");
     }
@@ -33,7 +35,7 @@ export default class BootDashboardScreen {
             this.gameFont.scale = style.scale;
 
             // Desenha item
-            this.gameFont.print(x, y, item);
+            this.gameFont.print(x, y, item.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()));
 
             // Atualiza posição X para próximo item (adapte conforme largura desejada)
             const textSize = this.gameFont.getTextSize(item);
@@ -56,6 +58,8 @@ export default class BootDashboardScreen {
             }
         }
     }
+
+    DrawDashboard(HomeDashboard)
 
     enter(params) {
         console.log("[BootScreen] Entrando na cena de Boot. Parametros:", params);

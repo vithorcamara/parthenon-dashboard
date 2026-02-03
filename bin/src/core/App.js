@@ -1,6 +1,6 @@
 // Project/src/core/App.js
 import ScreenManager from './ScreenManager.js';
-import Input from './Input.js';
+import Input from '../utils/Input.js';
 import LogoRevealScreen from '../screens/BootStartScreen.js';
 import BootDashboardScreen from '../screens/BootDashboardScreen.js';
 

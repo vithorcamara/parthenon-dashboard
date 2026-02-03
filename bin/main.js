@@ -5,9 +5,13 @@ console.log("[main] Iniciando Parthenon Dashboard...");
 
 // Importar e executar a função principal da aplicação
 import { run } from './src/core/App.js';
+import Preferences from './src/config/Preferences.js';
+
+const lang = Preferences.LANGUAGE || 'us';
 
 const jsList = [
-    './src/utils/audio.js', // Sound Handler
+    './src/utils/Audio.js', // Sound Handler
+    `./src/test/${lang}_lang.js`, // Language File
 ];
 
 jsList.forEach((js) => { std.loadScript(js); });

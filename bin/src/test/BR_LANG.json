@@ -1,0 +1,32 @@
+{
+    "DASHBOARD":{
+        "HOME":{
+            "B1": "Iniciar Disco",
+            "B2": "Bem vindo ao nosso Servidor Discord",
+            "B4": "Ver Perfil",
+            "B5": "Recentes",
+            "B8": "Guia do Parthenon"
+        },
+        "GAMES_AND_APPS":{
+            "B1": "Biblioteca de Jogos",
+            "B2": "Biblioteca de Apps",
+            "B4": "Install from USB",
+            "B5": "Manage Storage",
+            "B8": "Parthenon Guide"
+        },
+        "MEDIA":{
+            "B1": "Media Library",
+            "B2": "Parthenon Media Player",
+            "B4": "USB Media Player",
+            "B5": "Streaming Apps",
+            "B8": "Parthenon Guide"
+        },
+        "SETTINGS":{
+            "B1": "System Settings",
+            "B2": "Network Settings",
+            "B4": "Storage Settings",
+            "B5": "Parthenon Settings",
+            "B8": "Parthenon Guide"
+        }
+    }
+}

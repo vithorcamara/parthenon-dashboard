@@ -1,0 +1,95 @@
+{
+    "game settings": {
+        "PS2 - Display Logo": [
+            "Sim", "Não"
+        ],
+        "PS2 - Debug Colors": [
+            "Sim", "Não"
+        ],
+        "PS2 - Force Progressive": [
+            "Sim", "Não"
+        ],
+        "PS - Melhorar resolução": [
+            "Sim", "Não"
+        ],
+        "PS - Suavização": [
+            "Sim", "Não"
+        ],
+        "PS - In-Game Reset Mode": [
+            "Default", "1: [L1 + L2 + R1 + R2 + Select + Start]", "2: [L1 + L2 + R1 + R2 + Select]", "3: [L1 + L2 + R1 + R2 + Start]"
+        ],
+        "PS - HD TV Fix": [
+            "Sim", "Não"
+        ],
+        "PS - Widescreen Mode": [
+            "Não", "Ultra", "16:9", "x3"
+        ]
+    },
+    "system":{
+        "idioma": [
+            "Inglês", "Espanhol", "Francês", "Alemão", "Italiano", "Japonês", "Coreano", "Chinês Tradicional", "Chinês Simplificado", "Russo", "Polonês", "Português Brasileiro"
+        ],
+        "botão de confirmação": [
+            "O", "X"
+        ],
+        "mensagem de aviso na inicialização": [
+            "Sim", "Não"
+        ],
+        "leitura de bandeja de disco": [
+            "Sim", "Não"
+        ],
+        "informação do sistema": "Informações"
+    },
+    "tema":{
+        "tema": [
+            "Padrão", "Escuro", "Claro"
+        ],
+        "cor de destaque": [
+            "Azul", "Vermelho", "Verde", "Amarelo", "Roxo", "Laranja", "Rosa", "Ciano"
+        ],
+        "fundo": [
+            "Padrão", "Imagem personalizada"
+        ],
+        "ondas": [
+            "Sim", "Não"
+        ]
+    },
+    "data e hora": {
+        "formato de hora": [
+            "24 horas", "12 horas"
+        ],
+        "formato de data": [
+            "DD/MM/AAAA", "MM/DD/AAAA", "AAAA/MM/DD"
+        ],
+        "fuso horário": [
+            "Automático", "UTC-12:00", "UTC-11:00", "UTC-10:00", "UTC-09:00", "UTC-08:00", "UTC-07:00", "UTC-06:00", "UTC-05:00", "UTC-04:00", "UTC-03:00", "UTC-02:00", "UTC-01:00", "UTC+00:00", "UTC+01:00", "UTC+02:00", "UTC+03:00", "UTC+04:00", "UTC+05:00", "UTC+06:00", "UTC+07:00", "UTC+08:00", "UTC+09:00", "UTC+10:00", "UTC+11:00", "UTC+12:00"
+        ]
+    },
+    "apresentação":{
+        "tipo de tv": [
+            "4:3", "16:9"
+        ],
+        "saída de vídeo": [
+            "NTSC", "PAL", "DTV 480p"
+        ]
+    },
+    "segurança": {
+        "bloqueio por senha": [
+            "Ativado", "Desativado"
+        ],
+        "alterar senha": "Alterar Senha",
+        "controle parental": [
+            "Desativado", "Ativado"
+        ]
+    },
+    "rede": {
+        "configuração de rede": [
+            "Automática", "Manual"
+        ],
+        "tipo de conexão": [
+            "Ethernet", "Wi-Fi"
+        ],
+        "teste de conexão": "Teste de Conexão",
+        "ver configurações": "Ver Configurações"
+    }
+}
