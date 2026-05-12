@@ -5,9 +5,7 @@ export default function Input() {
     let pad = null;
     let enabled = true;
 
-    // -----------------------------
-    // Inicialização do PAD
-    // -----------------------------
+    // PAD Initialization
     try {
         pad = Pads.get(0);
         console.log("[Input] Controle (Pad 0) inicializado com sucesso.");
@@ -36,9 +34,7 @@ export default function Input() {
         r2: Pads.R2,
     };
 
-    // -----------------------------
     // UPDATE
-    // -----------------------------
     this.update = () => {
         if (!enabled) return;
 
@@ -50,18 +46,22 @@ export default function Input() {
                 this.buttons[name] = pad.pressed(buttonMap[name]);
             }
         }
+        // ANALÓGICO ESQUERDO
+        const DEADZONE = 25;
+
+        this.buttons.leftAnalogLeft  = pad.lx < -DEADZONE;
+        this.buttons.leftAnalogRight = pad.lx > DEADZONE;
+
+        this.buttons.leftAnalogUp    = pad.ly < -DEADZONE;
+        this.buttons.leftAnalogDown  = pad.ly > DEADZONE;
     };
 
-    // -----------------------------
     // Queries
-    // -----------------------------
     this.isButtonDown = (name) => !!this.buttons[name];
     this.isButtonPressed = (name) =>
         !!this.buttons[name] && !this.lastButtons[name];
 
-    // -----------------------------
-    // Mock de teclado
-    // -----------------------------
+    // Keyboard fallback (mock)
     let keyDownHandler = null;
     let keyUpHandler = null;
 
@@ -92,9 +92,7 @@ export default function Input() {
         console.log("[Input] Mock de teclado ativado.");
     }
 
-    // -----------------------------
     // SHUTDOWN (CRÍTICO)
-    // -----------------------------
     this.shutdown = () => {
         if (!enabled) return;
         enabled = false;

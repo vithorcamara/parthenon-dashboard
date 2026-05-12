@@ -1,8 +1,8 @@
 // Project/src/core/App.js
 import ScreenManager from './ScreenManager.js';
 import Input from '../utils/Input.js';
-import LogoRevealScreen from '../screens/BootStartScreen.js';
-import BootDashboardScreen from '../screens/BootDashboardScreen.js';
+import LogoRevealScreen from '../screens/BootScreen.js';
+import DashboardScreen from '../screens/DashboardScreen.js';
 
 export function run() {
     // --- Initialization ---

@@ -1,4 +1,4 @@
-import BootDashboardScreen from './BootDashboardScreen.js';
+import DashboardScreen from './DashboardScreen.js';
 import { Timer } from '../utils/timer.js';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Screen.getMode();
@@ -120,7 +120,7 @@ export default function LogoRevealScreen(context) {
             case STATES.FADE_OUT:
                 globalAlpha = 1 - Math.min(timer.get() / FADE_OUT_TIME, 1);
                 if (globalAlpha <= 0) {
-                    this.screenManager.loadScreen(BootDashboardScreen);
+                    this.screenManager.loadScreen(DashboardScreen);
                 }
                 break;
         }
