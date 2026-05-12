@@ -1,38 +1,170 @@
 const LANG = {
-    DASHBOARD:{
-        NAVMENU:[
-            "home",
-            "games & apps",
-            "media",
-            "settings"
+    DASHBOARD: {
+        NAVMENU: [
+            {
+                id: "home",
+                label: "home",
+                tiles: [
+                    {
+                        slot: "B1",
+                        id: "disc",
+                        title: "Start Disc",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B2",
+                        id: "discord",
+                        title: "Welcome to our Discord Server",
+                        size: { w: 2, h:2 },
+                        color: Color.new(30, 30, 30),
+                    },
+                    {
+                        slot: "B4",
+                        id: "profile",
+                        title: "See Profile",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B5",
+                        id: "recent",
+                        title: "Recents",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B8",
+                        id: "guide",
+                        title: "Parthenon Guide",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                ],
+            },
+            {
+                id: "games_apps",
+                label: "games & apps",
+                tiles: [
+                    {
+                        slot: "B1",
+                        id: "game_library",
+                        title: "Game Library",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B2",
+                        id: "app_library",
+                        title: "App Library",
+                        size: { w: 2, h:2 },
+                        color: Color.new(30, 30, 30),
+                    },
+                    {
+                        slot: "B4",
+                        id: "manage_storage",
+                        title: "Manage Storage",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B5",
+                        id: "install_usb",
+                        title: "Install from USB",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B8",
+                        id: "guide",
+                        title: "Parthenon Guide",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                ],
+            },
+            {
+                id: "media",
+                label: "media",
+                tiles: [
+                    {
+                        slot: "B1",
+                        id: "media_library",
+                        title: "Media Library",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B2",
+                        id: "media_player",
+                        title: "Parthenon Media Player",
+                        size: { w: 2, h:2 },
+                        color: Color.new(30, 30, 30),
+                    },
+                    {
+                        slot: "B4",
+                        id: "streaming_apps",
+                        title: "Streaming Apps",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B5",
+                        id: "usb_media_player",
+                        title: "USB Media Player",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B8",
+                        id: "guide",
+                        title: "Parthenon Guide",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                ],
+            },
+            {
+                id: "settings",
+                label: "settings",
+                tiles: [
+                    {
+                        slot: "B1",
+                        id: "system_settings",
+                        title: "System Settings",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B2",
+                        id: "network_settings",
+                        title: "Network Settings",
+                        size: { w: 2, h:2 },
+                        color: Color.new(30, 30, 30),
+                    },
+                    {
+                        slot: "B4",
+                        id: "parthenon_settings",
+                        title: "Parthenon Settings",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B5",
+                        id: "storage_settings",
+                        title: "Storage Settings",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                    {
+                        slot: "B8",
+                        id: "guide",
+                        title: "Parthenon Guide",
+                        size: { w: 1, h:1 },
+                        color: Color.new(0, 90, 255),
+                    },
+                ],
+            },
         ],
-        HOME:{
-            B1: "Start Disc",
-            B2: "Welcome to our Discord Server",
-            B4: "See Profile",
-            B5: "Recents",
-            B8: "Parthenon Guide"
-        },
-        GAMES_AND_APPS:{
-            B1: "Game Library",
-            B2: "App Library",
-            B4: "Install from USB",
-            B5: "Manage Storage",
-            B8: "Parthenon Guide"
-        },
-        MEDIA:{
-            B1: "Media Library",
-            B2: "Parthenon Media Player",
-            B4: "USB Media Player",
-            B5: "Streaming Apps",
-            B8: "Parthenon Guide"
-        },
-        SETTINGS:{
-            B1: "System Settings",
-            B2: "Network Settings",
-            B4: "Storage Settings",
-            B5: "Parthenon Settings",
-            B8: "Parthenon Guide"
-        }
-    }
-}
+    },
+};
