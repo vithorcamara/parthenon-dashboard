@@ -1,9 +1,10 @@
 // Parthenon/src/screens/BootScreen.js
+
 import LogoRevealScreen from './BootStartScreen.js';
+
 import Colors from '../ui/Colors.js';
 import Fonts from '../ui/Fonts.js';
 import TextStyles from '../ui/Texts.js';
-import Texts from '../ui/Texts.js';
 
 const data_screen = Screen.getMode();
 
@@ -11,72 +12,91 @@ export default class BootDashboardScreen {
     constructor({ input, screenManager }) {
         this.input = input;
         this.screenManager = screenManager;
+
         this.gameFont = null;
+
+        // =========================
+        // NAVIGATION MENU
+        // =========================
         this.navItems = LANG.DASHBOARD.NAVMENU;
-        this.activeNavIndex = 0; // item inicialmente selecionado
-        console.log("[BootScreen] Construtor.");
+        this.activeNavIndex = 0;
+
+        // =========================
+        // HOME TILES
+        // =========================
+        this.homeTiles = [
+            {
+                id: "disc",
+                title: "Iniciar disco",
+                x: 60,
+                y: 125,
+                w: 120,
+                h: 100,
+                color: Color.new(0, 90, 255),
+            },
+
+            {
+                id: "recent",
+                title: "Recentes",
+                x: 60,
+                y: 235,
+                w: 120,
+                h: 100,
+                color: Color.new(0, 90, 255),
+            },
+
+            {
+                id: "discord",
+                title: "Entre no nosso servidor Discord",
+                x: 190,
+                y: 125,
+                w: 240,
+                h: 210,
+                color: Color.new(30, 30, 30),
+            },
+
+            {
+                id: "profile",
+                title: "Ver Perfil",
+                x: 440,
+                y: 125,
+                w: 120,
+                h: 100,
+                color: Color.new(0, 90, 255),
+            },
+
+            {
+                id: "guide",
+                title: "Guia do Parthenon",
+                x: 440,
+                y: 235,
+                w: 120,
+                h: 100,
+                color: Color.new(0, 90, 255),
+            },
+        ];
+
+        console.log("[BootDashboardScreen] Constructor initialized.");
     }
 
-    // Helper para desenhar o navmenu
-    drawNavMenu() {
-        if (!this.gameFont) return;
-
-        let x = 80; // posição inicial X
-        const y = 50; // posição Y fixa do menu
-
-        this.navItems.forEach((item, index) => {
-            const style = (index === this.activeNavIndex) 
-                ? TextStyles.SELECTED_NAVMENU 
-                : TextStyles.UNSELECTED_NAVMENU;
-
-            // Aplica estilo
-            this.gameFont = style.font;
-            this.gameFont.color = style.color;
-            this.gameFont.scale = style.scale;
-
-            // Desenha item
-            this.gameFont.print(x, y, item.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()));
-
-            // Atualiza posição X para próximo item (adapte conforme largura desejada)
-            const textSize = this.gameFont.getTextSize(item);
-            x += textSize.width + 40; // 40px de espaçamento entre itens
-        });
-    }
-
-    // Atualiza o menu ao pressionar R1/L1
-    updateNavMenu() {
-        if (this.input.isButtonPressed("r1")) {
-            this.activeNavIndex++;
-            if (this.activeNavIndex >= this.navItems.length) {
-                this.activeNavIndex = 0; // volta ao primeiro
-            }
-        }
-        if (this.input.isButtonPressed("l1")) {
-            this.activeNavIndex--;
-            if (this.activeNavIndex < 0) {
-                this.activeNavIndex = this.navItems.length - 1; // vai pro último
-            }
-        }
-    }
-
-    DrawDashboard(HomeDashboard)
+    // =====================================
+    // SCREEN LIFECYCLE
+    // =====================================
 
     enter(params) {
-        console.log("[BootScreen] Entrando na cena de Boot. Parametros:", params);
-        // Carrega a fonte para esta cena.
-        try {
-            console.log("[BootScreen] Carregando fonte...");
-            this.gameFont = Fonts.REGULAR;
-            console.log("[BootScreen] Fonte carregada com sucesso.");
-            
-            // background = new Image("./assets/gfx/backgrounds/background_original.png");
-            // background.width = data_screen.width;
-            // background.height = data_screen.height;
-            // console.log("[BootScreen] Background carregado com sucesso.");
+        console.log("[BootDashboardScreen] Entering screen.", params);
 
-            Object.entries(data_screen).forEach(([key, value]) => {console.log(key, value);});
+        try {
+            this.gameFont = Fonts.REGULAR;
+
+            console.log("[BootDashboardScreen] Font loaded successfully.");
+
+            Object.entries(data_screen).forEach(([key, value]) => {
+                console.log(key, value);
+            });
+
         } catch (e) {
-            console.error(`[BootScreen] Falha ao carregar a fonte '${this.gameFont}'. Erro:`, e);
+            console.error("[BootDashboardScreen] Failed to load font:", e);
             this.gameFont = null;
         }
     }
@@ -84,21 +104,124 @@ export default class BootDashboardScreen {
     update() {
         this.updateNavMenu();
 
-        // Ao pressionar START, carrega a LogoRevealScreen
+        // DEBUG / TEMP
         if (this.input.isButtonPressed('start')) {
-            console.log("[BootScreen] Botao START pressionado! Carregando LogoRevealScreen...");
+            console.log("[BootDashboardScreen] START pressed.");
+
             this.screenManager.loadScreen(LogoRevealScreen);
         }
     }
 
     render() {
-        Draw.rect(0, 0, data_screen.width, data_screen.height, Colors.BACKGROUND1);
+        // =========================
+        // BACKGROUND
+        // =========================
+        Draw.rect(
+            0,
+            0,
+            data_screen.width,
+            data_screen.height,
+            Colors.BACKGROUND1
+        );
+
+        // =========================
+        // UI
+        // =========================
         this.drawNavMenu();
+        this.drawHomeTiles();
     }
 
     exit() {
-        console.log("[BootScreen] Saindo da cena de Boot.");
-        // Descarregar recursos da cena, se necessário
+        console.log("[BootDashboardScreen] Exiting screen.");
+
         this.gameFont = null;
+    }
+
+    // =====================================
+    // NAVIGATION MENU
+    // =====================================
+
+    drawNavMenu() {
+        if (!this.gameFont) return;
+
+        let x = 90;
+        const y = 75;
+
+        this.navItems.forEach((item, index) => {
+
+            const style = (index === this.activeNavIndex)
+                ? TextStyles.SELECTED_NAVMENU
+                : TextStyles.UNSELECTED_NAVMENU;
+
+            this.gameFont = style.font;
+            this.gameFont.color = style.color;
+            this.gameFont.scale = style.scale;
+
+            const formattedText =
+                item.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+
+            this.gameFont.print(x, y, formattedText);
+
+            const textSize = this.gameFont.getTextSize(item);
+
+            x += textSize.width + 40;
+        });
+    }
+
+    updateNavMenu() {
+        if (this.input.isButtonPressed("r1")) {
+
+            this.activeNavIndex++;
+
+            if (this.activeNavIndex >= this.navItems.length) {
+                this.activeNavIndex = 0;
+            }
+        }
+
+        if (this.input.isButtonPressed("l1")) {
+
+            this.activeNavIndex--;
+
+            if (this.activeNavIndex < 0) {
+                this.activeNavIndex = this.navItems.length - 1;
+            }
+        }
+    }
+
+    // =====================================
+    // HOME DASHBOARD
+    // =====================================
+
+    drawHomeTiles() {
+        if (!this.gameFont) return;
+
+        this.homeTiles.forEach(tile => {
+
+            // =========================
+            // TILE BACKGROUND
+            // =========================
+            Draw.rect(
+                tile.x,
+                tile.y,
+                tile.w,
+                tile.h,
+                tile.color
+            );
+
+            // =========================
+            // TILE TITLE
+            // =========================
+            this.gameFont = Fonts.REGULAR;
+
+            this.gameFont.color = Color.new(255, 255, 255);
+
+            this.gameFont.scale = 0.45;
+
+            this.gameFont.print(
+                tile.x + 10,
+                tile.y + tile.h - 20,
+                tile.title
+            );
+        });
     }
 }
