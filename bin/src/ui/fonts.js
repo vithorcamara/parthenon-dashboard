@@ -7,5 +7,3 @@ const Fonts = {
   SEMIBOLD: new Font(`${font_path}SemiBold.ttf`),
   BOLD: new Font(`${font_path}Bold.ttf`),
 };
-
-export default Fonts;

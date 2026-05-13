@@ -11,7 +11,10 @@ const lang = Preferences.LANGUAGE || 'us';
 
 const jsList = [
     './src/utils/Audio.js', // Sound Handler
-    `./src/test/${lang}_lang.js`, // Language File
+    './src/ui/Colors.js', // Colors
+    './src/ui/Fonts.js', // Fonts
+    './src/ui/Texts.js', // Text Styles
+    `./src/config/${lang}_lang.js`, // Language File
 ];
 
 jsList.forEach((js) => { std.loadScript(js); });

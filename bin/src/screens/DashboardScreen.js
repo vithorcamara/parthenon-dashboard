@@ -1,12 +1,7 @@
-// Parthenon/src/screens/BootScreen.js
-
 import LogoRevealScreen from './BootScreen.js';
-
-import Colors from '../ui/Colors.js';
-import Fonts from '../ui/Fonts.js';
-
 import DashboardGrid from '../app/components/DashboardGrid.js';
 import DashboardNav from '../app/components/DashboardNav.js';
+import DescriptionButton from '../app/components/DescriptionButton.js';
 
 const data_screen = Screen.getMode();
 
@@ -15,7 +10,7 @@ export default class BootDashboardScreen {
     constructor({ input, screenManager }) {
         this.input = input;
         this.screenManager = screenManager;
-        this.gameFont = null;
+        this.font = null;
 
         // DATA
         this.navItems = LANG.DASHBOARD.NAVMENU;
@@ -28,7 +23,7 @@ export default class BootDashboardScreen {
     // SCREEN LIFECYCLE
     enter(params) {
         console.log("[BootDashboardScreen] Entering screen.", params);
-        this.gameFont = Fonts.REGULAR;
+        this.font = Fonts.REGULAR;
     }
 
     update() {
@@ -68,11 +63,13 @@ export default class BootDashboardScreen {
             this.getCurrentMenu().tiles,
             this.selectedTileIndex
         );
+
+        DescriptionButton.render(1);
     }
 
     exit() {
         console.log("[BootDashboardScreen] Exiting screen.");
-        this.gameFont = null;
+        this.font = null;
     }
 
     // DATA HELPERS

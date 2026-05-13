@@ -1,8 +1,3 @@
-// Parthenon/src/app/components/DashboardNav.js
-
-import Fonts from '../../ui/Fonts.js';
-import TextStyles from '../../ui/Texts.js';
-
 export default class DashboardNav {
     static handleInput(input, currentIndex, totalItems) {
         let newIndex = currentIndex;
@@ -27,8 +22,8 @@ export default class DashboardNav {
     }
 
     static render(navItems, activeIndex) {
-        let x = 90;
-        const y = 75;
+        let x = 48;
+        const y = 103;
 
         navItems.forEach((item, index) => {
             const isSelected = (index === activeIndex);

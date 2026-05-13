@@ -1,5 +1,3 @@
-import Fonts from '../../ui/Fonts.js';
-
 export default class DashboardGrid {
 
     // GRID CONFIGURATION
@@ -7,11 +5,11 @@ export default class DashboardGrid {
         cols: 4,
         rows: 2,
 
-        startX: 60,
-        startY: 125,
+        startX: 30,
+        startY: 175,
 
-        tileW: 120,
-        tileH: 100,
+        tileW: 140,
+        tileH: 120,
 
         gap: 10,
     };
