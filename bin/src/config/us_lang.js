@@ -11,6 +11,7 @@ const LANG = {
                         title: "Start Disc",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B2",
@@ -18,6 +19,7 @@ const LANG = {
                         title: "Welcome to our Discord Server",
                         size: { w: 2, h:2 },
                         color: Colors.SECONDARY_COLOR,
+                        icon: false,
                     },
                     {
                         slot: "B4",
@@ -25,6 +27,7 @@ const LANG = {
                         title: "See Profile",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B5",
@@ -32,6 +35,7 @@ const LANG = {
                         title: "Recents",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B8",
@@ -39,6 +43,7 @@ const LANG = {
                         title: "Parthenon Guide",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                 ],
             },
@@ -52,6 +57,7 @@ const LANG = {
                         title: "Game Library",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B2",
@@ -59,6 +65,7 @@ const LANG = {
                         title: "App Library",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B3",
@@ -66,6 +73,7 @@ const LANG = {
                         title: "Download Game Media",
                         size: { w: 2, h:2 },
                         color: Colors.SECONDARY_COLOR,
+                        icon: false,
                     },
                     {
                         slot: "B5",
@@ -73,6 +81,7 @@ const LANG = {
                         title: "Recents",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B6",
@@ -80,6 +89,7 @@ const LANG = {
                         title: "Save Management",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                 ],
             },
@@ -93,6 +103,7 @@ const LANG = {
                         title: "File Explorer",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B2",
@@ -100,6 +111,7 @@ const LANG = {
                         title: "All Music",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B3",
@@ -107,6 +119,7 @@ const LANG = {
                         title: "YouTube",
                         size: { w: 2, h:1 },
                         color: Colors.SECONDARY_COLOR,
+                        icon: false,
                     },
                     {
                         slot: "B5",
@@ -114,6 +127,7 @@ const LANG = {
                         title: "Recent Files",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B6",
@@ -121,6 +135,7 @@ const LANG = {
                         title: "Netflix",
                         size: { w: 2, h:1 },
                         color: Colors.SECONDARY_COLOR,
+                        icon: false,
                     },
                     {
                         slot: "B8",
@@ -128,6 +143,7 @@ const LANG = {
                         title: "Watch Videos",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                 ],
             },
@@ -141,6 +157,7 @@ const LANG = {
                         title: "System",
                         size: { w: 2, h:2 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B3",
@@ -148,6 +165,7 @@ const LANG = {
                         title: "Account",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B4",
@@ -155,6 +173,7 @@ const LANG = {
                         title: "Preferences",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B7",
@@ -162,6 +181,7 @@ const LANG = {
                         title: "Privacy",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                     {
                         slot: "B8",
@@ -169,6 +189,7 @@ const LANG = {
                         title: "Shutdown",
                         size: { w: 1, h:1 },
                         color: Colors.PRIMARY_COLOR,
+                        icon: true,
                     },
                 ],
             },
