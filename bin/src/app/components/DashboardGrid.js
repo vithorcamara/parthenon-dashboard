@@ -71,7 +71,25 @@ export default class DashboardGrid {
                 tile.color
             );
 
-            // 3. Tile Title
+            // 3. Render Icon (Basic)
+            const iconName = rawTile.icon || rawTile.id;
+            if (iconName) {
+                // Carrega apenas uma vez para não travar o console
+                if (!rawTile._image) {
+                    rawTile._image = new Image(`assets/gfx/icons/${iconName}.png`);
+                }
+
+                const img = rawTile._image;
+                if (img.ready()) {
+                    // Cálculo de centralização
+                    const iconX = tile.x + (tile.w - img.width) / 2;
+                    const iconY = tile.y + (tile.h - img.height) / 2;
+
+                    img.draw(iconX, iconY);
+                }
+            }
+
+            // 4. Tile Title
             const font = Fonts.REGULAR;
             if (font) {
                 font.color = Color.new(255, 255, 255);
